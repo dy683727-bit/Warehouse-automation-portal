@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="rgb(37, 99, 235)">
+<title>Warehouse Automation Portal</title>
+
+<script src="theme.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     OWNER AUTHENTICATION
+========================================================= -->
+
+<section id="authScreen">
+
+    <button
+        class="theme-toggle auth-theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
+        title="Switch to dark mode">
+
+        <span aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text">Dark mode</span>
+
+    </button>
+
+    <div class="auth-box">
+
+        <div class="auth-left">
+
+            <div class="auth-brand">
+
+                <div class="auth-logo">
+                    🏭
+                </div>
+
+                <div>
+                    <strong>
+                        Warehouse Automation
+                    </strong>
+
+                    <span>
+                        Operations Portal
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="auth-copy">
+
+                <span class="auth-tag">
+                    OWNER ACCESS
+                </span>
+
+                <h2>
+                    Manage your warehouse
+                    from one place.
+                </h2>
+
+                <p>
+                    Access your warehouse dashboard,
+                    manage inventory, monitor stock,
+                    control warehouse locations and
+                    review operational alerts.
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📦
+                        </div>
+
+                        <div>
+                            <strong>
+                                Inventory Management
+                            </strong>
+
+                            <span>
+                                Track SKUs and stock levels
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <div>
+                            <strong>
+                                Warehouse Analytics
+                            </strong>
+
+                            <span>
+                                Monitor warehouse performance
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🔔
+                        </div>
+
+                        <div>
+                            <strong>
+                                Operational Alerts
+                            </strong>
+
+                            <span>
+                                Identify stock issues quickly
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="auth-right">
+
+            <div class="auth-content">
+
+                <h2>
+                    Welcome back
+                </h2>
+
+                <div class="auth-sub">
+                    Sign in as the owner to continue.
+                </div>
+
+                <div class="tabs">
+
+                    <button
+                        id="loginTab"
+                        class="tab active"
+                        type="button">
+
+                        Owner Login
+
+                    </button>
+
+                    <button
+                        id="registerTab"
+                        class="tab"
+                        type="button">
+
+                        Create Owner
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="authMessage"
+                    class="auth-message">
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form active">
+
+                    <div class="auth-field">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            id="loginEmail"
+                            type="email"
+                            placeholder="owner@warehouse.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <div class="password-box">
+
+                            <input
+                                id="loginPassword"
+                                type="password"
+                                placeholder="Enter password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                id="loginEye"
+                                class="eye"
+                                type="button">
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-options">
+
+                        <label class="remember">
+
+                            <input
+                                id="rememberMe"
+                                type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+                        <button
+                            id="forgotPassword"
+                            class="link-btn"
+                            type="button">
+
+                            Forgot password?
+
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="auth-submit"
+                        type="submit">
+
+                        Sign In to Portal
+
+                    </button>
+
+
+                    <div class="demo-box">
+
+                        <b>Demo Owner Account</b>
+
+                        <br>
+
+                        Email:
+                        <b>owner@warehouse.com</b>
+
+                        <br>
+
+                        Password:
+                        <b>Warehouse@123</b>
+
+                    </div>
+
+                </form>
+
+
+                <!-- REGISTER FORM -->
+
+                <form
+                    id="registerForm"
+                    class="auth-form">
+
+                    <div class="auth-field">
+
+                        <label>
+                            Owner Name
+                        </label>
+
+                        <input
+                            id="ownerName"
+                            type="text"
+                            placeholder="Enter owner name"
+                            required>
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            id="registerEmail"
+                            type="email"
+                            placeholder="owner@example.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label>
+                            Create Password
+                        </label>
+
+                        <div class="password-box">
+
+                            <input
+                                id="registerPassword"
+                                type="password"
+                                placeholder="Create password"
+                                required>
+
+                            <button
+                                id="registerEye"
+                                class="eye"
+                                type="button">
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-field">
+
+                        <label>
+                            Confirm Password
+                        </label>
+
+                        <input
+                            id="confirmPassword"
+                            type="password"
+                            placeholder="Confirm password"
+                            required>
+
+                    </div>
+
+
+                    <button
+                        class="auth-submit"
+                        type="submit">
+
+                        Create Owner Account
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="logo">
+            W
+        </div>
+
+        <div class="brand-copy">
+
+            <strong>
+                Warehouse Automation
+            </strong>
+
+            <span>
+                Operations Portal
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav">
+
+        <button
+            class="active"
+            data-page="dashboard">
+
+            ◼ Dashboard
+
+        </button>
+
+        <button
+            data-page="inventory">
+
+            ▦ Inventory
+
+        </button>
+
+        <button
+            data-page="zones">
+
+            ⌖ Warehouse Zones
+
+        </button>
+
+        <button
+            data-page="alerts">
+
+            ! Alerts
+
+        </button>
+
+        <button
+            data-page="suppliers">
+
+            ◎ Suppliers
+
+        </button>
+
+        <button
+            data-page="activity">
+
+            ↺ Activity
+
+        </button>
+
+        <button
+            data-page="settings">
+
+            ⚙ Settings
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button
+            id="logoutBtn">
+
+            Logout Owner
+
+        </button>
+
+        <p>
+            Warehouse portal project data
+            is saved locally in this browser.
+        </p>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main">
+
+
+<header class="topbar">
+
+    <div class="top-left">
+
+        <button
+            id="sidebarToggle"
+            class="menu-toggle"
+            type="button">
+
+            ☰
+
+        </button>
+
+
+        <div class="page-title">
+
+            <small>
+                WAREHOUSE OPERATIONS
+            </small>
+
+            <h1 id="pageTitle">
+                Dashboard
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <span
+            id="ownerPill"
+            class="owner-pill">
+        </span>
+
+        <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            title="Switch to dark mode">
+
+            <span aria-hidden="true">🌙</span>
+            <span class="theme-toggle-text">Dark mode</span>
+
+        </button>
+
+        <button
+            id="quickAdd"
+            class="primary">
+
+            ＋ Add Item
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section
+    id="dashboard"
+    class="page active">
+
+    <div class="hero">
+
+        <div>
+
+            <h2>
+                Warehouse performance at a glance.
+            </h2>
+
+            <p>
+                Monitor inventory, stock health,
+                warehouse locations and operational
+                alerts from one command center.
+            </p>
+
+        </div>
+
+        <div class="hero-icon">
+            🏭
+        </div>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <span>
+                Total SKUs
+            </span>
+
+            <strong id="totalSku">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                Total Units
+            </span>
+
+            <strong id="totalUnits">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat warning">
+
+            <span>
+                Low Stock
+            </span>
+
+            <strong id="lowStock">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat danger-stat">
+
+            <span>
+                Out of Stock
+            </span>
+
+            <strong id="outStock">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid2">
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <h3>
+                        Stock Alerts
+                    </h3>
+
+                    <p>
+                        Items needing attention
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="dashboardAlerts"></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <h3>
+                        Warehouse Zones
+                    </h3>
+
+                    <p>
+                        Current stock distribution
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="dashboardZones"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INVENTORY
+========================================================= -->
+
+<section
+    id="inventory"
+    class="page">
+
+
+    <div class="card">
+
+        <div class="card-head">
+
+            <div>
+
+                <h3 id="inventoryTitle">
+                    Add Inventory Item
+                </h3>
+
+                <p>
+                    Add and manage warehouse stock.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="barcode-panel">
+            <div class="barcode-heading">
+                <div>
+                    <h4>Scan to receive stock</h4>
+                    <p>Use a USB or Bluetooth barcode scanner, or scan with your camera.</p>
+                </div>
+                <button id="startBarcodeCamera" class="secondary" type="button">📷 Use Camera</button>
+            </div>
+            <label class="barcode-input-label" for="barcodeInput">Barcode / SKU</label>
+            <input id="barcodeInput" class="barcode-input" type="text" inputmode="text"
+                autocomplete="off" placeholder="Click here, scan a barcode, then press Enter">
+            <p id="barcodeStatus" class="barcode-status" role="status" aria-live="polite">
+                Scanned codes are added automatically. Each scan receives one unit; new items are flagged for details.
+            </p>
+            <div id="barcodeCameraPanel" class="barcode-camera-panel" hidden>
+                <video id="barcodeVideo" playsinline muted></video>
+                <button id="stopBarcodeCamera" class="secondary" type="button">Stop camera</button>
+            </div>
+        </div>
+
+
+        <form
+            id="inventoryForm"
+            class="inventory-form">
+
+
+            <input
+                id="itemId"
+                type="hidden">
+
+
+            <label>
+
+                Item / SKU Name
+
+                <input
+                    id="itemName"
+                    placeholder="Wireless Barcode Scanner"
+                    required>
+
+            </label>
+
+
+            <label>
+
+                SKU Code
+
+                <input
+                    id="skuCode"
+                    placeholder="WH-EL-001">
+
+            </label>
+
+
+            <label>
+
+                Barcode
+
+                <input
+                    id="barcodeCode"
+                    placeholder="Scan or enter barcode">
+
+            </label>
+
+
+            <label class="full">
+
+                Item Photo
+
+                <div class="photo-actions">
+
+                    <button
+                        id="takePhoto"
+                        class="primary"
+                        type="button">
+
+                        📷 Take Photo
+
+                    </button>
+
+                    <button
+                        id="galleryButton"
+                        class="secondary"
+                        type="button">
+
+                        🖼 Gallery
+
+                    </button>
+
+                </div>
+
+
+                <input
+                    id="cameraInput"
+                    type="file"
+                    accept="image/*"
+                    capture="environment">
+
+
+                <input
+                    id="galleryInput"
+                    type="file"
+                    accept="image/*">
+
+
+                <div
+                    id="photoPreview"
+                    class="preview">
+
+                    No photo selected
+
+                </div>
+
+            </label>
+
+
+            <label>
+
+                Category
+
+                <select id="category">
+
+                    <option>Electronics</option>
+                    <option>Packaging</option>
+                    <option>Hardware</option>
+                    <option>Furniture</option>
+                    <option>Medical</option>
+                    <option>Clothing</option>
+                    <option>Automotive</option>
+                    <option>Other</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Unit
+
+                <select id="unit">
+
+                    <option>pcs</option>
+                    <option>box</option>
+                    <option>carton</option>
+                    <option>kg</option>
+                    <option>g</option>
+                    <option>pallet</option>
+                    <option>set</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Quantity
+
+                <input
+                    id="quantity"
+                    type="number"
+                    min="0"
+                    value="0"
+                    required>
+
+            </label>
+
+
+            <label>
+
+                Reorder Level
+
+                <input
+                    id="reorderLevel"
+                    type="number"
+                    min="0"
+                    value="10"
+                    required>
+
+            </label>
+
+
+            <label>
+
+                Warehouse Zone
+
+                <select id="zone">
+
+                    <option>A-01</option>
+                    <option>A-02</option> 
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Bin / Rack
+
+                <input
+                    id="bin"
+                    placeholder="Rack 04 / Bin 12">
+
+            </label>
+
+
+            <label>
+
+                Supplier
+
+                <select id="supplier">
+
+                    <option>TATA Tech</option>
+                    <option>PackPro</option>
+                    <option>SafeWork</option> 
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Purchase Date
+
+                <input
+                    id="purchaseDate"
+                    type="date">
+
+            </label>
+
+
+            <label>
+
+                Expiry Date
+
+                <input
+                    id="expiryDate"
+                    type="date">
+
+            </label>
+
+
+            <div class="form-actions full">
+
+                <button
+                    class="primary"
+                    type="submit">
+
+                    Save Item
+
+                </button>
+
+                <button
+                    id="clearForm"
+                    class="secondary"
+                    type="button">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-head">
+
+            <div>
+
+                <h3>
+                    Inventory Register
+                </h3>
+
+                <p>
+                    Search, edit and delete warehouse items.
+                </p>
+
+            </div>
+
+            <input
+                id="inventorySearch"
+                class="search"
+                type="search"
+                aria-label="Search inventory or scan a SKU barcode"
+                placeholder="Search or scan SKU...">
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Photo</th>
+                        <th>SKU</th>
+                        <th>Barcode</th>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Qty</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody
+                    id="inventoryTable">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ZONES
+========================================================= -->
+
+<section
+    id="zones"
+    class="page">
+
+    <div class="card">
+
+        <h3>
+            Warehouse Zones
+        </h3>
+
+        <div
+            id="zonesPage"
+            class="page-content">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ALERTS
+========================================================= -->
+
+<section
+    id="alerts"
+    class="page">
+
+    <div class="card">
+
+        <h3>
+            Operational Alerts
+        </h3>
+
+        <div
+            id="alertsPage"
+            class="page-content">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SUPPLIERS
+========================================================= -->
+
+<section
+    id="suppliers"
+    class="page">
+
+    <div class="card">
+
+        <h3>
+            Suppliers
+        </h3>
+
+        <div
+            id="suppliersPage"
+            class="page-content">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACTIVITY
+========================================================= -->
+
+<section
+    id="activity"
+    class="page">
+
+    <div class="card">
+
+        <h3>
+            Activity Log
+        </h3>
+
+        <div
+            id="activityPage"
+            class="page-content">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SETTINGS
+========================================================= -->
+
+<section
+    id="settings"
+    class="page">
+
+    <div class="card">
+
+        <h3>
+            Settings
+        </h3>
+
+        <div
+            class="settings-actions">
+
+            <button
+                id="loadDemo"
+                class="secondary">
+
+                Load Demo Data
+
+            </button>
+
+
+            <button
+                id="exportBackup"
+                class="secondary">
+
+                Export Backup
+
+            </button>
+
+
+            <button
+                id="exportInventoryCsv"
+                class="secondary">
+
+                Download Inventory CSV
+
+            </button>
+
+
+            <button
+                id="enableNotifications"
+                class="secondary">
+
+                Enable Alerts
+
+            </button>
+
+
+            <button
+                id="resetData"
+                class="danger">
+
+                Delete All Data
+
+            </button>
+
+        </div>
+
+        <p
+            class="muted settings-note">
+
+            This project stores demonstration data
+            in the current browser using localStorage.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<div id="toast" class="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
